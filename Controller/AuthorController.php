@@ -1,22 +1,33 @@
 <?php
-class AuthorController{
-    public function index($route){
-        require_once $route;
+class AuthorController {
+    public function index(){
+        $authorManager = new AuthorManager();
+        $allAuthorResult = $authorManager->allAuthor();
+        require_once "View/files/author.php";
     }
-    public function create(){
-        // 
+
+    public function store($name, $nationality){
+        $author = new Author($name, $nationality);
+        $authorManager = new AuthorManager();
+        $authorManager->authorStore($author);
+        header("Location: authorIndex");
     }
-    public function store(){
-        // 
+
+    public function edit($id){
+        $authorManager = new AuthorManager();
+        $authorResult = $authorManager->authorConsult($id);
+        require_once "View/files/authorEdit.php";
     }
-    public function edit(){
-        // 
+
+    public function update($id, $name, $nationality){
+        $authorManager = new AuthorManager();
+        $authorManager->authorUpdate($id, $name, $nationality);
+        header("Location: authorIndex");
     }
-    public function update(){
-        // 
-    }
-    public function destroy(){
-        // 
+
+    public function destroy($id){
+        $authorManager = new AuthorManager();
+        $authorManager->authorDestroy($id);
+        header("Location: authorIndex");
     }
 }
-?>
