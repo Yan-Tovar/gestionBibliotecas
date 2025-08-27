@@ -6,7 +6,7 @@ class Connection{
     private $affectedRows;
     private $getId;
     public function open(){
-        $this->mySQLI = new mysqli("localhost", "root", "", "");
+        $this->mySQLI = new mysqli("localhost", "root", "", "gestionBibliotecas");
         if($this->mySQLI->connect_error){
             die("Connection failed: ".$this->mySQLI->connect_error);
         }
@@ -28,7 +28,7 @@ class Connection{
     public function getAffectedRows(){
         return $this->affectedRows;
     }
-    public function getOneFile() {
+    public function getOneRow() {
         if ($this->result) {
             return $this->result->fetch_assoc();
         }

@@ -1,7 +1,7 @@
 <?php
 class DashboardController{
-    public function index($route){
-        require_once $route;
+    public function index(){
+        require_once "View/files/dashboard.php";
     }
     public function create(){
         // 
