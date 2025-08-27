@@ -55,15 +55,16 @@
 
     <!-- Listado de Autores -->
     <div class="container-fluid">
+        <div class="centrado">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBook">
+                Agregar Libro
+            </button>
+        </div>
+        <br>
         <?php
             if(isset($allBookResult) && $allBookResult->num_rows > 0){
         ?>
-            <div class="centrado">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createBook">
-                    Agregar Libro
-                </button>
-            </div>
             <ol class="list-group list-group-numbered">
                 <div class="row">
                     <h6>Listado de Libros</h6>

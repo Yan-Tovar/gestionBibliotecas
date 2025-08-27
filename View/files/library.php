@@ -55,15 +55,16 @@
 
     <!-- Listado de Bibliotecas -->
     <div class="container-fluid">
+        <div class="centrado">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createLibrary">
+                Agregar Biblioteca
+            </button>
+        </div>
+        <br>
         <?php
             if(isset($allLibraryResult) && $allLibraryResult->num_rows > 0){
         ?>
-            <div class="centrado">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createLibrary">
-                    Agregar Biblioteca
-                </button>
-            </div>
             <ol class="list-group list-group-numbered">
                 <div class="row">
                     <h6>Listado de Bibliotecas</h6>
@@ -141,7 +142,7 @@
                                 <input type="text" class="form-control" id="location" name="location" required>
                             </div>
                              <div class="mb-3">
-                                <label for="books" class="form-label">Autores</label>
+                                <label for="books" class="form-label">Libros</label>
                                 <select name="books[]" id="books" class="form-control" multiple required>
                                     <?php
                                         if ($allBooksResult->num_rows > 0) {
